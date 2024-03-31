@@ -39,17 +39,34 @@
   - Netflix, Hulu
   - User-created: Facebook/Instagram, Youtube, Twitter, Tiktok
 - E-commerce: Amazon
-- ranking (search, feed, recommendataion) 
+- Ranking (search, feed, recommendataion)
 
 ### Evalulation Metric
 - business-oriented
-- system-specific
+  - user engagement
+  - click through
+  - rating
+  - revisiting
+  - play time
+  - both macro/micro
+- task-specific
+  - classification
+    - accuracy
+    - precision/recall/F-1
+  - ranking
+    - precision (web), recall (patent)
+    - mean average precision / MRR / NDCG
+    - precision at K
+  - regression
+    - error
 
 ### ML Components
-- Classification
+- Classification: binary, multi-class, multi-label, sequence
 - Regression
 - Clustering
-- Text/Image generation
+- Generation
+  - text: translation, summarization, QnA, image description
+  - image: from text description, from sketch, from low res, from partially drawn
 
 ### Data Model
 
