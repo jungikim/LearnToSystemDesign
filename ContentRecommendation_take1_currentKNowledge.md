@@ -198,8 +198,8 @@ P(Vrec, U) = P(Vrec) * P(Vrec | U) / P(U) (but P(U) is given)
 
 
 ### similarity measure (U-U or V-V)
-- feature vector -> cosine similarity (other/better measures?)
-- embedding of some sort -> FAISS
+- feature vector or embedding of some sort -> cosine similarity (other/better measures?)
+- FAISS: speed up embedding similarity with GPU
 - if this is bottleneck, reduce search space with pre-computed K-means
   - or just consider certain factor combinations such as (age group, region, gender) as a cluster
 
