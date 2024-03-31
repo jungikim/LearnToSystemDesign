@@ -69,9 +69,43 @@ content-based
 
 
 
-## How YouTube does it [https://dl.acm.org/doi/10.1145/2959100.2959190]
+## YouTube's video recommendation system [https://dl.acm.org/doi/pdf/10.1145/2959100.2959190]
 
-@TODO: summarize here with diagrams and tech details
+### Overview
+ - candidate generation (millions -> hundreds):
+   - video corpus
+   - user history and context
+ - ranking (hudreds -> dozens)
+   - candidates
+   - user history and context
+   - other candidate sources
+   - video features
+
+
+### Candidate generation
+- Recommendataion as classification: extreme mlticlass classification
+
+classifying a video watch Wt at time t among millions of videos i (classes) from a corpus V
+based on a user U and context C:
+P(wt=i|U,C) = e^(v_i*u) / sigma over j in V [ e^(v_j*u) ]
+
+To speed up the softmax for millions of classes, several thousand negative classes are sampled (100x speed up)
+
+Once trained, the scoring problem reduces to a nearest neighbor search in the dot product space (no softmax needed)
+
+
+video vector (avg of video watches) / search vector (avg of search tokens) / geographic embedding / example age / gender /
+|
+V
+ReLU
+|
+V
+..
+|
+V
+Softmax / nearest neighbor lookup (user <> video)
+
+
 
 ## [https://eugeneyan.com/writing/system-design-for-discovery/] 
 
@@ -134,44 +168,6 @@ elastic search for documents (restaurants and food items) and feature store for 
 #### Infer: retrieval and rerank
 retrieval: query standardization, synonymization, query expansion (knowledge graph), retrieval
 rerank: lexical similarity between query and documents, store popularity, search context
-
-
-## YouTube's video recommendation system [https://dl.acm.org/doi/pdf/10.1145/2959100.2959190]
-
-### Overview
- - candidate generation (millions -> hundreds):
-   - video corpus
-   - user history and context
- - ranking (hudreds -> dozens)
-   - candidates
-   - user history and context
-   - other candidate sources
-   - video features
-
-
-### Candidate generation
-- Recommendataion as classification: extreme mlticlass classification
-
-classifying a video watch Wt at time t among millions of videos i (classes) from a corpus V
-based on a user U and context C:
-P(wt=i|U,C) = e^(v_i*u) / sigma over j in V [ e^(v_j*u) ]
-
-To speed up the softmax for millions of classes, several thousand negative classes are sampled (100x speed up)
-
-Once trained, the scoring problem reduces to a nearest neighbor search in the dot product space (no softmax needed)
-
-
-video vector (avg of video watches) / search vector (avg of search tokens) / geographic embedding / example age / gender /
-|
-V
-ReLU
-|
-V
-..
-|
-V
-Softmax / nearest neighbor lookup (user <> video)
-
 
 
 
