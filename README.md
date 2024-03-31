@@ -5,12 +5,12 @@
 ### Data management (ETL, Data Discovery, BI, ML)
 
 - Apache Spark [https://spark.apache.org/]: large-scale data analytics
- - data engineering, data science, and machine learning
- - single-node or clusters
- - Batch/streaming data
- - distributed SQL queries for dashboarding and ad-hoc reporting
- - Data analysis on petabyte-scale data
- - ML data pipeline
+  - data engineering, data science, and machine learning
+  - single-node or clusters
+  - Batch/streaming data
+  - distributed SQL queries for dashboarding and ad-hoc reporting
+  - Data analysis on petabyte-scale data
+  - ML data pipeline
 - Apache Hadoop
 - Apache Strom
 - Apache Flink
@@ -26,18 +26,18 @@
 
 ### NoSQL DB
 - Apache Cassandra [https://cassandra.apache.org/]: NoSQL distributed database
- - light weight and distributed
- - Linearly scalable and fault-tolerant
- - masterless
- - low latency
+  - light weight and distributed
+  - Linearly scalable and fault-tolerant
+  - masterless
+  - low latency
 - Redis: in-memory data store, high read and write speeds
 - MongoDB: document store; uses clusters not tables; flexibility and speed
 
 
 ## Tasks (design patterns)
 - Content Services:
- - Netflix, Hulu
- - User-created: Facebook/Instagram, Youtube, Twitter, Tiktok
+  - Netflix, Hulu
+  - User-created: Facebook/Instagram, Youtube, Twitter, Tiktok
 - E-commerce: Amazon
 - ranking (search, feed, recommendataion) 
 
